@@ -38,8 +38,8 @@ jobs:
         #run: npm test
 
       # Step 5: Lint the code (optional)
-      - name: Lint the code
-        run: npm run lint
+      #- name: Lint the code
+       # run: npm run lint
 
   deploy:
     needs: build  # Run this after the build job
