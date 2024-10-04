@@ -1,0 +1,64 @@
+name: Node.js CI/CD for E-commerce App
+
+on:
+  push:
+    branches:
+      - main  # Run workflow on pushes to main branch
+  pull_request:
+    branches:
+      - main  # Run workflow on pull requests to main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]  # Test against Node.js versions
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run tests
+      # You can add actual test scripts later.
+      - name: Run tests
+        run: npm test
+
+      # Step 5: Lint the code (optional)
+      - name: Lint the code
+        run: npm run lint
+
+  deploy:
+    needs: build  # Run this after the build job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      # Deploy steps (e.g., using SSH, Docker, or any cloud provider like AWS, Heroku, etc.)
+      # Example: Deploy with Docker or SCP to a cloud server
+      - name: Deploy to production
+        run: |
+          echo "Deploy your app here using your deployment strategy (e.g., SCP, Docker, etc.)"
+          # Example commands:
+          # scp -r ./ ecom-user@your-server:/path/to/deployment
+          # or Dockerize and push to a cloud service
