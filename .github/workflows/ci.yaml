@@ -27,7 +27,7 @@ jobs:
         working-directory: ./api
         run: |
           npm install
-          npm install supertest --save-dev # Install supertest as dev dependency
+        #  npm install supertest --save-dev # Install supertest as dev dependency
       - name: checking the permissions of package.json
         run: |
             chmod 777 ./api/package.json &&
