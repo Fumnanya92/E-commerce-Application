@@ -27,6 +27,6 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "mocha": "^10.7.3",
-    "eslint": "^8.53.0"  // Added ESLint for linting
+    "eslint": "^8.53.0"  
   }
 }
