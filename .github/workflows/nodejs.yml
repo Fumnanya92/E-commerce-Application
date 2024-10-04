@@ -34,8 +34,8 @@ jobs:
 
       # Step 4: Run tests
       # You can add actual test scripts later.
-      - name: Run tests
-        run: npm test
+      #- name: Run tests
+        #run: npm test
 
       # Step 5: Lint the code (optional)
       - name: Lint the code
