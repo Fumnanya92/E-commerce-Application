@@ -1,6 +1,3 @@
-Here’s a markdown-formatted documentation of the tasks for your capstone project, broken down step-by-step:
-
-```markdown
 # Capstone Project: E-Commerce Application CI/CD Pipeline
 
 ## Project Overview
@@ -267,6 +264,4 @@ This project provides a comprehensive workflow to set up an e-commerce platform 
   - [AWS](https://aws.amazon.com/documentation/)
   - [Azure](https://azure.microsoft.com/en-us/documentation/)
   - [Google Cloud](https://cloud.google.com/docs)
-```
 
-Let me know if you need more details or changes to this documentation!
